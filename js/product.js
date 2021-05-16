@@ -128,19 +128,19 @@ const selecOptionDOM = document.querySelector("select") // select.option target
 function addToCartOnClick() {
     const infoToUser = new InfoToUser()
     const optionSelect = selecOptionDOM.value // retrieves value of select. option
-        if (optionSelect === "") {            // check if option is selected
-            infoToUser.alertInfoCheck()      // alert user to select option
-        } else {
-            
-            // Add Selected Product to Cart
-            const addToBasket = new AddToBasket()
-            productDatas
-                .getProduct()
-                .then(productDatas => {
-                    addToBasket.addToCart(productDatas)
-                    infoToUser.alertInfoAdd()  // confirm "add to cart" to user
-                    infoToUser.insertInfoAdd() // add "go to cart" button
-                    numberOfArticlesInBasket() // update article number info
-                })
+    if (optionSelect === "") {                // check if option is selected
+        infoToUser.alertInfoCheck()           // alert user to select option
+    } else {
+
+        // Add Selected Product to Cart
+        const addToBasket = new AddToBasket()
+        productDatas
+            .getProduct()
+            .then(productDatas => {
+                addToBasket.addToCart(productDatas)
+                infoToUser.alertInfoAdd()     // confirm "add to cart" to user
+                infoToUser.insertInfoAdd()    // add "go to cart" button
+                numberOfArticlesInBasket()    // update article number info
+            })
     }
 }

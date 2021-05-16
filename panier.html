@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="./img/favicons/site.webmanifest">
+    <link rel="preload" href="/css/main.css" as="style">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="preload" href="./js/cart.js" as="script">
+    <script src="./js/cart.js" defer></script>
+    <script src="./js/common.js" defer></script>
+    <title>Orinoco - Panier</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <a href="./index.html">
+                <img rel="preload" as=image src="./img/logo.png" alt="Orinoco logo" width="225" height="61">
+            </a>
+            <h1 class="title">Vintage Cameras</h1>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Produits</a></li>
+                <li><a href="./commande.html">Commande</a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+    
+    <main>
+        <h2>
+            Votre Panier &#160
+            <span id="cartArticlesNumber" class="basket" onload="numberOfArticlesInBasket()"></span>
+        </h2>
+        <section class="data-section col">
+            <div id="basket-array" class="">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>
+                                Article
+                            </th>
+                            <th>
+                                Quantité
+                            </th>
+                            <th>
+                                Prix unitaire
+                            </th>
+                            <th>
+                                Total
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="add-to-basket" class="col"></tbody>
+                    <tr>
+                        <td class="txt-right" colspan="3">
+                            TOTAL
+                        </td>
+                        <td id="total_price"></td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <button id="empty-the-basket" class="btn" type="button" onclick="emptyBasket()">Vider le panier</button>
+                <div id="valid_command" class="btn"><a href="#cde_form">Poursuivre votre commande</a></div>
+                <div id="empty_basket"></div>
+            </div>
+        </section>
+        <section id="cde_form" class="container">
+            <form>
+                <h1> VALIDATION DE COMMANDE</h1>
+                <div class="cde-txt ">
+                    Votre commande est presque complète, <br>
+                    il vous suffit de renseigner et vérifier vos coordonnées <br>
+                    puis de cliquer sur le bouton ci-dessous : "Valider ma Commande"
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">NOM</label>
+                        <input type="text" class="form-control" id="name" name="name" />
+                    </div>
+                    <div class="form-group">
+                        <label for="firstname">PRENOM</label>
+                        <input type="text" class="form-control" id="firstname" name="firstname"/>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="adress">ADRESSE</label>
+                        <input type="text" class="form-control" id="adress" name="adress" />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">VILLE</label>
+                        <input type="text" class="form-control" id="city" name="city"  />
+                    </div>
+                    <div class="form-group">
+                        <label for="postal_code">CODE POSTAL</label>
+                        <input type="text" class="form-control" id="postal_code" name="postal_code"/>
+                    </div>
+                </div>
+                <div id="code_error"></div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">E-MAIL</label>
+                        <div class="input-group">
+                            <input type="email" class="form-control" id="email" name="email"  />
+                        </div>
+                    </div>
+                </div>
+                <div id="email_error"></div>
+                <input type="reset" id="refresh" name="refresh" value="Effacer" class="btn" />
+                <input type="submit" id="envoi" name="envoi" value="Valider ma Commande" class="btn" />
+            </form>
+            <button type="button" class="btn btn-sm"><a href="index.html">Retourner à la liste de produits</a></button>
+        </section>
+    </main>
+
+    <footer>
+        Copyright © 2021 Orinoco
+    </footer>
+</body>
+</html>

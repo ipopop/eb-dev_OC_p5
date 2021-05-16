@@ -13,7 +13,6 @@ function numberOfArticlesInBasket() {
         localStorage.setItem("articleNumber", articleNumber)
         document.getElementById("cartArticlesNumber").textContent = articleNumber
     }
-    cart = JSON.parse(localStorage.getItem("basket"))
     return articleNumber
 }
 numberOfArticlesInBasket()
