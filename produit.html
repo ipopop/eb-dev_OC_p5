@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="./img/favicons/site.webmanifest">
+    <link rel="preload" href="/css/main.css" as="style">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="preload" href="./js/product.js" as="script">
+    <script src="./js/product.js" defer></script>
+    <title>Orinoco - Produit</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <a href="./index.html">
+                <img rel="preload" as=image src="./img/logo.png" alt="Orinoco logo" width="225" height="61">
+            </a>
+            <h1 class="title">Vintage Cameras</h1>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Produits</a></li>
+                <li>
+                    <a href="./panier.html">
+                        Panier &#160
+                        <span id="cartArticlesNumber" onload="numberOfArticlesInBasket()"></span>
+                    </a>
+                </li>
+                <li><a href="./commande.html">Commande</a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+    
+    <main>
+        <h2>Votre Sélection</h2>
+        <section class="data-section">
+            <div id="select_product" class="select-product__container"></div>
+        </section>
+        <section class="select-product__options">
+            <div class="select-product__container">
+                <div class="select-product__item">
+                    <label class="select-product__text" for="lense_option">Objectifs disponibles avec ce boitier</label>
+                </div>
+                <select id="lense_option" class="btn">
+                    <option value="" selected>Choisir un objectif</option>
+                </select>
+            </div>
+            <div class="center col">
+                <button id="bouton" type="button" class="btn btn-lg" onclick="addToCartOnClick()" data-toggle="modal" data-target="#exampleModalCenter">
+                    Ajouter au panier
+                </button>
+                <div id="insert-info"></div>
+                <a href="index.html" class="link-to-product">
+                    <button class="btn">
+                        Retourner à la page produits
+                    </button>
+                </a>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        Copyright © 2021 Orinoco
+    </footer>
+</body>
+</html>
