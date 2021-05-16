@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="./img/favicons/site.webmanifest">
+    <link rel="preload" href="/css/main.css" as="style">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="preload" href="./js/main.js" as="script">
+    <script src="./js/main.js" defer></script>
+    <title>Orinoco - caméras vintage</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <a href="./index.html">
+                <img rel="preload" as=image src="./img/logo.png" alt="Orinoco logo" width="225" height="61">
+            </a>
+            <h1 class="title">Vintage Cameras</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="./panier.html">
+                    Panier &#160
+                    <span id="cartArticlesNumber" onload="numberOfArticlesInBasket()"></span>
+                    </a>
+                </li>
+                <li><a href="./commande.html">Commande</a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+    
+    <main>
+        <h2>Nouveaux arrivages !</h2>
+        <section class="data-section">
+            <div id="products-list" class="data-card-container"></div>
+        </section>
+    </main>
+
+    <footer>
+        Copyright © 2021 Orinoco
+    </footer>
+</body>
+</html>
