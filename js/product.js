@@ -101,7 +101,7 @@ class InfoToUser {
                     </button>
                 </a>
             </div>`
-      }
+    }
 }
 
 // New Instance of Class for Datas Request
@@ -140,6 +140,7 @@ function addToCartOnClick() {
                     addToBasket.addToCart(productDatas)
                     infoToUser.alertInfoAdd()  // confirm "add to cart" to user
                     infoToUser.insertInfoAdd() // add "go to cart" button
+                    numberOfArticlesInBasket() // update article number info
                 })
     }
 }
