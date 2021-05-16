@@ -3,7 +3,7 @@ function numberOfArticlesInBasket() {
     let articleNumber = 0
     
     if (!cart || cart.length === 0) {
-        document.getElementById("cartArticlesNumber").style.display = "none"
+        document.getElementById("cartArticlesNumber").style.opacity = "0"
         
     } else {
         cart.forEach((item) => {
@@ -12,6 +12,7 @@ function numberOfArticlesInBasket() {
         });
         localStorage.setItem("articleNumber", articleNumber)
         document.getElementById("cartArticlesNumber").textContent = articleNumber
+        document.getElementById("cartArticlesNumber").style.opacity = "1"
     }
     return articleNumber
 }
