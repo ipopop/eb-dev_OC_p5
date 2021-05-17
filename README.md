@@ -16,23 +16,31 @@
   </a>
 </p>
 
-> just a Web Dev student exercice
+> Just an exercise from a Web Development student at OpenClassrooms.com 
 
 > This is a Draft to test a first refactor of my E-commerce
 > project with an OOP
 > (Object Oriented Programming) approach
 
-<!-- ### 🏠 []() -->
+### 🏠 "Live Website !" (the online version is not yet available)
 
-### ✨ [Slides présentation](https://slides.com/ipopop/soutenance-p5/fullscreen)
+### ✨ [Slides presentation](https://slides.com/ipopop/soutenance-p5/fullscreen)
 
 
 ## Mission
 
 ```
-1.    
+Realize an MVP / Front-end of an E-Commerce website
+
+1. - Retrieve data from the provided API (in backend)
+
+2 - Use only HTML, CSS & JavaScript (no framework or JS library)
+
+3 - And finally, make a unit test plan
 
 ```
+The backend (provided by: OC) is available [here](
+https://github.com/OpenClassrooms-Student-Center/JWDP5.git)
 
 ## Author
 

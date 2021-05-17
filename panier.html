@@ -10,9 +10,10 @@
     <link rel="manifest" href="./img/favicons/site.webmanifest">
     <link rel="preload" href="/css/main.css" as="style">
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="preload" href="./js/common.js" as="script">
+    <script src="./js/common.js" defer></script>
     <link rel="preload" href="./js/cart.js" as="script">
     <script src="./js/cart.js" defer></script>
-    <script src="./js/common.js" defer></script>
     <title>Orinoco - Panier</title>
 </head>
 <body>
@@ -65,7 +66,7 @@
                 </table>
             </div>
             <div>
-                <button id="empty-the-basket" class="btn" type="button" onclick="emptyBasket()">Vider le panier</button>
+                <button id="clean-basket" class="btn" onclick="emptyBasket()" type="button">Vider le panier</button>
                 <div id="valid_command" class="btn"><a href="#cde_form">Poursuivre votre commande</a></div>
                 <div id="empty_basket"></div>
             </div>

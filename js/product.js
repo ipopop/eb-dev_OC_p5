@@ -4,20 +4,7 @@ const API_Category = "cameras" // 'teddies' / 'cameras' / 'furniture'
 // get the 'id' value in the page url
 // ex. : http://127.0.0.1:5500/produit.html?id=5be1ed3f1c9d44000030b061
 const productID = new URL(window.location).searchParams.get('id')
-const datasURL = `http://localhost:3000/api/${API_Category}/${productID}`
-
-// Selected Product Datas
-class ProductDatas {
-    async getProduct() {
-        const datas = fetch(datasURL)    // fetch to API
-            .then((resp) => resp.json()) // 'json' format to async fetch response
-        try {
-            return datas                 // 'Promise' response
-        } catch (err) {
-            console.error("fetch datas request error :", err)
-        }
-    }
-}
+datasURL = `http://localhost:3000/api/${API_Category}/${productID}`
 
 // DOM Variables
 const productDOM = document.getElementById("select_product") // list target
@@ -73,7 +60,7 @@ class AddToBasket {
             description: productData.description,
             price: productData.price * .01,
             quantite: 1,
-            subTotal: productData.price * .01 * 1
+            subtotal: productData.price * .01 * 1
         })
                                                     // adds Basket to localStorage
         window.localStorage.setItem("basket", JSON.stringify(basket))
@@ -104,20 +91,17 @@ class InfoToUser {
     }
 }
 
-// New Instance of Class for Datas Request
-const productDatas = new ProductDatas() // new instance of fetch request to API
-
 // On Page Loading
 document.addEventListener("DOMContentLoaded", () => {
     const productUI = new ProductUI()        // new instance of HTML bloc
     const productOptions = new ProductOptions()
 
     // Get Selected Product & Display It
-    productDatas
-        .getProduct()                        // launch method to request API
-        .then(productDatas => {              // async response result for UI
-            productUI.displayProduct(productDatas)
-            productOptions.addOptions(productDatas)
+    datasRequest
+        .getProducts(datasURL)                // launch method to request API
+        .then(datasRequest => {              // async response result from API
+            productUI.displayProduct(datasRequest)
+            productOptions.addOptions(datasRequest)
         })
 })
 
@@ -134,10 +118,10 @@ function addToCartOnClick() {
 
         // Add Selected Product to Cart
         const addToBasket = new AddToBasket()
-        productDatas
-            .getProduct()
-            .then(productDatas => {
-                addToBasket.addToCart(productDatas)
+        datasRequest
+            .getProducts(datasURL)
+            .then(datasRequest => {
+                addToBasket.addToCart(datasRequest)
                 infoToUser.alertInfoAdd()     // confirm "add to cart" to user
                 infoToUser.insertInfoAdd()    // add "go to cart" button
                 numberOfArticlesInBasket()    // update article number info
