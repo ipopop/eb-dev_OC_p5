@@ -8,8 +8,8 @@ productsDOM = document.getElementById("products-list") // list target
 // Products UI
 class ProductsUI {
     displayProducts(datas) {
-        let productsListHtml = ''                  // list of all articles
-        datas.map(datasFields => {       // map to all articles datas
+        let productsListHtml = ''                      // list of all articles
+        datas.map(datasFields => {                     // map to all articles datas
             let { name, price, _id, description, imageUrl } = datasFields
             productsListHtml += `
                 <div class="data-card">
@@ -20,15 +20,15 @@ class ProductsUI {
                             <p>${description}</p>
                         </div>
                     </a>
-                </div>`           // add single el. to list
+                </div>`                                // add single el. to list
         })
-        productsDOM.innerHTML = productsListHtml      // insert list to target
+        productsDOM.innerHTML = productsListHtml       // insert list to target
     }
 }
 
 // On Page Loading
 document.addEventListener("DOMContentLoaded", () => {
-    const productsUI = new ProductsUI()             // Instance of UI Product Class
+    const productsUI = new ProductsUI()              // Instance of UI Product Class
 
     // Get All Products
     datasRequest

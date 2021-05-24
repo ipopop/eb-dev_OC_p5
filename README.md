@@ -1,7 +1,3 @@
-
-
-
-
 <h1 align="center">Welcome to OC-P5-OOP-draft 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1-blue.svg?cacheSeconds=2592000" />
@@ -34,9 +30,9 @@ Realize an MVP / Front-end of an E-Commerce website
 
 1. - Retrieve data from the provided API (in backend)
 
-2 - Use only HTML, CSS & JavaScript (no framework or JS library)
+2. - Use only HTML, CSS & JavaScript (no framework or JS library)
 
-3 - And finally, make a unit test plan
+3. - And finally, make a unit test plan
 
 ```
 The backend (provided by: OC) is available [here](

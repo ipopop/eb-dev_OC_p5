@@ -67,7 +67,6 @@ class AddToBasket {
     }
 }
 
-
 // Infos Variable
 const infoDOM = document.getElementById("insert-info")
 
@@ -93,13 +92,13 @@ class InfoToUser {
 
 // On Page Loading
 document.addEventListener("DOMContentLoaded", () => {
-    const productUI = new ProductUI()        // new instance of HTML bloc
+    const productUI = new ProductUI()         // new instance of HTML bloc
     const productOptions = new ProductOptions()
 
     // Get Selected Product & Display It
     datasRequest
         .getProducts(datasURL)                // launch method to request API
-        .then(datasRequest => {              // async response result from API
+        .then(datasRequest => {               // async response result from API
             productUI.displayProduct(datasRequest)
             productOptions.addOptions(datasRequest)
         })
@@ -108,23 +107,25 @@ document.addEventListener("DOMContentLoaded", () => {
 // DOM Variables
 const selecOptionDOM = document.querySelector("select") // select.option target
 
-// On User Click : 'Add To Cart'
-function addToCartOnClick() {
+// On User Click : 'Add To basket'
+const btnAdd = document.getElementById('btn_add_to_basket')
+btnAdd.addEventListener("click", function btnAddToBasket() {
     const infoToUser = new InfoToUser()
     const optionSelect = selecOptionDOM.value // retrieves value of select. option
     if (optionSelect === "") {                // check if option is selected
         infoToUser.alertInfoCheck()           // alert user to select option
     } else {
 
-        // Add Selected Product to Cart
+        // Add Selected Product to basket
         const addToBasket = new AddToBasket()
         datasRequest
             .getProducts(datasURL)
             .then(datasRequest => {
                 addToBasket.addToCart(datasRequest)
-                infoToUser.alertInfoAdd()     // confirm "add to cart" to user
-                infoToUser.insertInfoAdd()    // add "go to cart" button
+                infoToUser.alertInfoAdd()     // confirm "add to basket" to user
+                infoToUser.insertInfoAdd()    // add "go to basket" button
                 numberOfArticlesInBasket()    // update article number info
             })
     }
-}
+})
+

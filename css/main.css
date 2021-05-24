@@ -1,8 +1,15 @@
-*, *::after, *::before {
+*,
+*::after,
+*::before {
     box-sizing: border-box;
-  }
+}
 
-body, main {
+body {
+    width: 100vw;
+}
+
+body,
+main {
     overflow-x: hidden;
     display: block;
     margin: 0;
@@ -13,7 +20,15 @@ body, main {
     background-color: rgb(255, 251, 246);
 }
 
-body, header, nav, main, .header, .title, .data-section, .card-title, footer {
+body,
+header,
+nav,
+main,
+.header,
+.title,
+.data-section,
+.card-title,
+footer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,7 +63,8 @@ header {
     background-color: rgb(192, 188, 176);
 }
 
-header, footer {
+header,
+footer {
     position: relative;
 }
 
@@ -57,7 +73,7 @@ footer::before {
     content: '';
     width: 100vw;
     height: .33rem;
-    background: linear-gradient(90deg, rgba(233,154,16,1) 0%, rgba(162,120,255,1) 100%);
+    background: linear-gradient(90deg, rgba(233, 154, 16, 1) 0%, rgba(162, 120, 255, 1) 100%);
     opacity: .85;
     position: absolute;
     top: 0%;
@@ -68,7 +84,8 @@ header::after {
     top: 100%;
 }
 
-.header, main {
+.header,
+main {
     width: 100%;
     max-width: 1024px;
 }
@@ -116,7 +133,8 @@ a {
     font-size: 150%;
 }
 
-.title h1, h2 {
+.title h1,
+h2 {
     text-align: center;
 }
 
@@ -191,9 +209,9 @@ main {
 
 .data-card {
     justify-self: center;
-    align-self:   center;
+    align-self: center;
     width: 41vw;
-    min-width: 100px;
+    min-width: 260px;
     max-width: 450px;
     overflow: hidden;
     border-radius: 5px;
@@ -205,21 +223,8 @@ main {
     margin: 2rem;
 }
 
-#select-product .data-card {
-    width: 70vw;
-    max-width: 950px;
-}
-
-.data-card img, #select-product img {
-    width: 100%;
-}
-
-#select-product .data-card .card-content p {
-    -webkit-line-clamp: initial;
-}
-
 #btn-info-basket {
-    border: solid 5px rgba(162,120,255,1);
+    border: solid 5px rgba(162, 120, 255, 1);
 }
 
 #cde_form {
@@ -243,7 +248,7 @@ main {
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: .25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 #basket-array img {
@@ -254,12 +259,13 @@ main {
 
 .qty {
     min-width: 50px;
-    flex-direction: column-reverse;
+    flex-direction: column;
     display: flex;
     align-items: center;
 }
 
-.unit-price, .subtotal {
+.unit-price,
+.subtotal {
     min-width: 65px;
 }
 
@@ -278,7 +284,7 @@ main {
     margin: 0;
 }
 
-#command_number h3 {
+#order_number h3 {
     text-align: center;
 }
 
@@ -292,11 +298,25 @@ main {
     white-space: normal;
 }
 
-#command {
+#select_product .data-card {
+    width: 70vw;
+    max-width: 950px;
+}
+
+.data-card img,
+#select_product img {
+    width: 100%;
+}
+
+#select_product .data-card .card-content p {
+    -webkit-line-clamp: initial;
+}
+
+#order {
     margin: 2rem;
 }
 
-#command img {
+#order img {
     width: 100%;
     margin: 2.5rem 0;
 }
@@ -305,7 +325,7 @@ main {
     margin-bottom: 2rem;
 }
 
-#cartArticlesNumber {
+#basketArticlesNumber {
     text-align: center;
     width: 1rem;
     font-size: .6rem;
@@ -318,7 +338,7 @@ main {
     z-index: 1;
 }
 
-#cartArticlesNumber::after {
+#basketArticlesNumber::after {
     content: '';
     display: inline-block;
     position: absolute;
@@ -334,10 +354,19 @@ main {
     opacity: 1;
 }
 
-h2 #cartArticlesNumber {
+h2 #basketArticlesNumber {
     top: 30%;
     right: 50%;
     transform: translate(500%, 0%);
+}
+
+#code_error,
+#email_error {
+    color: rgb(215, 0, 171);
+}
+
+input select:focus-visible {
+    border-color: #2a6dc9 !important;
 }
 
 footer {
@@ -347,4 +376,26 @@ footer {
     text-align: center;
     background-color: #331e30;
     color: #e29f29;
+}
+
+@media (max-width: 567px) {
+
+    .data-card-container {
+        grid-template-columns: 1fr;
+    }
+
+    .data-card {
+        width: 60vw;
+    }
+
+    .table {
+        max-width: 95vw;
+    }
+
+    #cde_form > form, .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }

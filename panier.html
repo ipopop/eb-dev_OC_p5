@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="preload" href="./js/common.js" as="script">
     <script src="./js/common.js" defer></script>
-    <link rel="preload" href="./js/cart.js" as="script">
-    <script src="./js/cart.js" defer></script>
+    <link rel="preload" href="./js/panier.js" as="script">
+    <script src="./js/panier.js" as="script" defer></script>
     <title>Orinoco - Panier</title>
 </head>
 <body>
@@ -35,7 +35,7 @@
     <main>
         <h2>
             Votre Panier &#160
-            <span id="cartArticlesNumber" class="basket" onload="numberOfArticlesInBasket()"></span>
+            <span id="basketArticlesNumber" class="basket" onload="numberOfArticlesInBasket()"></span>
         </h2>
         <section class="data-section col">
             <div id="basket-array" class="">
@@ -67,7 +67,7 @@
             </div>
             <div>
                 <button id="clean-basket" class="btn" onclick="emptyBasket()" type="button">Vider le panier</button>
-                <div id="valid_command" class="btn"><a href="#cde_form">Poursuivre votre commande</a></div>
+                <div id="valid_order" class="btn"><a href="#cde_form">Poursuivre votre commande</a></div>
                 <div id="empty_basket"></div>
             </div>
         </section>

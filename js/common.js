@@ -1,3 +1,6 @@
+// LocalStorage Request Variable
+const basket = JSON.parse(localStorage.getItem("basket"))
+
 // API URL Variable
 let datasURL = ''
 
@@ -19,20 +22,20 @@ const datasRequest = new DatasRequest() // new instance of fetch request to API
 
 // Basket Info
 function numberOfArticlesInBasket() {
-    const cart = JSON.parse(localStorage.getItem("basket"))
+    const basket = JSON.parse(localStorage.getItem("basket"))
     let articleNumber = 0
     
-    if (!cart || cart.length === 0) {
-        document.getElementById("cartArticlesNumber").style.opacity = "0"
+    if (!basket || basket.length === 0) {
+        document.getElementById("basketArticlesNumber").style.opacity = "0"
         
     } else {
-        cart.forEach((item) => {
-            let inCart = item.quantite
-            articleNumber = articleNumber + inCart
-        });
+        basket.forEach((item) => {
+            let inbasket = item.quantite
+            articleNumber = articleNumber + inbasket
+        })
         localStorage.setItem("articleNumber", articleNumber)
-        document.getElementById("cartArticlesNumber").textContent = articleNumber
-        document.getElementById("cartArticlesNumber").style.opacity = "1"
+        document.getElementById("basketArticlesNumber").textContent = articleNumber
+        document.getElementById("basketArticlesNumber").style.opacity = "1"
     }
     return articleNumber
 }

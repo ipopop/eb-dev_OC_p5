@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,10 +13,12 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="preload" href="./js/common.js" as="script">
     <script src="./js/common.js" defer></script>
-    <link rel="preload" href="./js/index.js" as="script">
-    <script src="./js/index.js" defer></script>
-    <title>Orinoco - caméras vintage</title>
+    <link rel="preload" href="./js/commande.js" as="script">
+    <script src="./js/commande.js" defer></script>
+    <script src="./js/panier.js" defer></script>
+    <title>Orinoco - Commande</title>
 </head>
+
 <body>
     <header>
         <div class="header">
@@ -23,24 +26,25 @@
                 <img rel="preload" as=image src="./img/logo.png" alt="Orinoco logo" width="225" height="61">
             </a>
             <h1 class="title">Vintage Cameras</h1>
-        <nav>
-            <ul>
-                <li>
-                    <a href="./panier.html">
-                    Panier &#160
-                    <span id="basketArticlesNumber" onload="numberOfArticlesInBasket()"></span>
-                    </a>
-                </li>
-                <li><a href="./commande.html">Commande</a></li>
-            </ul>
-        </nav>
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Produits</a></li>
+                    <li>
+                        <a href="./panier.html">
+                            Panier &#160
+                            <span id="basketArticlesNumber"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </header>
-    
+
     <main>
-        <h2>Nouveaux arrivages !</h2>
+        <h2>Votre Commande</h2>
         <section class="data-section">
-            <div id="products-list" class="data-card-container"></div>
+            <section class="container" id="order"></section>
+            <section class="container" id="order_number"></section>
         </section>
     </main>
 
@@ -48,4 +52,5 @@
         Copyright © 2021 Orinoco
     </footer>
 </body>
+
 </html>
