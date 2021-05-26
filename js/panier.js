@@ -93,13 +93,14 @@ class Basket {
   }
 }
 
-// FORM & POST
+// FORM Check
 class Form {
 
   validMail() {
     document.querySelector("#email_error").textContent = ""
     const email = document.querySelector("#email").value
-    const regMail = /^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z|0-9])+((\.){0,1}[A-Z|a-z|0-9]){2}\.[a-z]{2,8}$/gm // Mail Validation (Source Regex Tool : "regexr dot com/3bcrb")
+    // Mail Validation (Source Regex Tool : "regexr dot com/3bcrb")
+    const regMail = /^([A-Z|a-z|0-9](\.|_){0,1})+[A-Z|a-z|0-9]\@([A-Z|a-z|0-9])+((\.){0,1}[A-Z|a-z|0-9]){2}\.[a-z]{2,8}$/gm
     if (!regMail.test(email)) {
       document.querySelector("#email_error").textContent =
         "Merci de vérifier votre adresse email"
@@ -111,7 +112,7 @@ class Form {
   validZipCode() {
     document.querySelector("#code_error").textContent = ""
     const zipCode = document.querySelector("#postal_code").value;
-    const regZipCode = /^(?:0[1-9]|[1-9]\d)\d{3}$/gm // French ZipCode
+    const regZipCode = /^(?:0[1-9]|[1-9]\d)\d{3}$/gm // French ZipCode (5 numbers)
     if (!regZipCode.test(zipCode)) {
       document.querySelector("#code_error").textContent =
         "Merci d'indiquer un code postal à 5 chiffres"
@@ -145,8 +146,8 @@ class Form {
 // POST with order number & contact infos
 class Post {
   requestPost() { 
-
     const product_id = basket.map(product => product.id)
+    
     let contact = {
       contact: {
         firstName: document.querySelector("#firstname").value.trim(),
@@ -158,7 +159,7 @@ class Post {
       products: product_id,
     }
 
-    const request = new Request(                                      // POST to API
+    const request = new Request(                                   // POST to API
       "http://localhost:3000/api/cameras/order", {
         method: "POST",
         body: JSON.stringify(contact),
@@ -171,14 +172,14 @@ class Post {
 
     fetch(request)
       .then((response) => response.json())
-      .then((response) => {                                           // API response for command number
+      .then((response) => {                                        // API response for order number
         let numOrder = response.orderId
-        localStorage.setItem("order_id", JSON.stringify(numOrder)) // update localstorage with command number
-        localStorage.setItem("contact", JSON.stringify(contact))     // update localstorage with user infos
+        localStorage.setItem("order_id", JSON.stringify(numOrder)) // update localstorage with order number
+        localStorage.setItem("contact", JSON.stringify(contact))   // update localstorage with user infos
     })
   }
 
-  confirmCde() { // Confirm & Go to commande page
+  confirmCde() { // Confirm & Go to order page
     alert("Votre commande a bien été validée, vous allez être redirigé")
     setTimeout(function () {
       window.location = 'commande.html'

@@ -1,4 +1,4 @@
-<h1 align="center">Welcome to OC-P5-OOP-draft 👋</h1>
+<h1 align="center">Welcome to my MVP/Front E-Commerce 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1-blue.svg?cacheSeconds=2592000" />
   <a href="https://en.wikipedia.org/wiki/MIT_License" target="_blank">
@@ -12,18 +12,19 @@
   </a>
 </p>
 
-> Just an exercise from a Web Development student at OpenClassrooms.com 
-
-> This is a Draft to test a first refactor of my E-commerce
-> project with an OOP
-> (Object Oriented Programming) approach
-
-### 🏠 "Live Website !" (the online version is not yet available)
-
 ### ✨ [Slides presentation](https://slides.com/ipopop/soutenance-p5/fullscreen)
+## A from scratch javascript-only MVP (Minimum Viable Product)
+
+Just an exercise from a Web Development student at OpenClassrooms.com.
+
+This is a draft to test a first refactor of my front e-commerce
+project with an OOP (Object Oriented Programming) approach
+
+> I'm new to the business, so please bear with me 🤓
 
 
-## Mission
+---
+## Mission (P5 - Orinoco)
 
 ```
 Realize an MVP / Front-end of an E-Commerce website
@@ -35,23 +36,53 @@ Realize an MVP / Front-end of an E-Commerce website
 3. - And finally, make a unit test plan
 
 ```
+
+## Installation instructions
+
 The backend (provided by: OC) is available [here](
 https://github.com/OpenClassrooms-Student-Center/JWDP5.git)
 
-## Author
+
+```
+Install the backend and launch it before launching the frontend.
+
+You must have pre-installed NodeJS
+
+1. - Install the backend provided by OC :
+     "npm i"
+
+2. - Start the backend server :
+     "node server"
+
+3. - And finally, copy this repo
+     (the front-end) & launch it :
+     for example with VS-Codium
+     and "Live Server"
+
+```
+---
+![index page](https://raw.githubusercontent.com/ipopop/eb-dev_OC_p5/main/img/img-01.jpg)
+![product option](https://raw.githubusercontent.com/ipopop/eb-dev_OC_p5/main/img/img-02.jpg)
+![product link](https://raw.githubusercontent.com/ipopop/eb-dev_OC_p5/main/img/img-03.jpg)
+![basket page](https://raw.githubusercontent.com/ipopop/eb-dev_OC_p5/main/img/img-04.jpg)
+![check form](https://raw.githubusercontent.com/ipopop/eb-dev_OC_p5/main/img/img-05.jpg)
+![confirm order page](https://raw.githubusercontent.com/ipopop/eb-dev_OC_p5/main/img/img-06.jpg)
+
+---
+## Authors
 
 👤 **eb-dev**
+* Website: maboite.space
+* Github: [@ipopop](https://github.com/ipopop)
 
-* Website template & project definition : [OpenClassrooms](https://openclassrooms.com/fr/paths/185-developpeur-web)
-* Github: [@eb-dev](https://github.com/ipopop)
-
+👤 Website Backend & project definition : [OpenClassrooms](https://openclassrooms.com/fr/paths/185-developpeur-web)
 ## Show your support
 
 Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2021 [eb-dev](https://github.com/eb-dev).<br />
+Copyright © 2021 [eb-dev](https://github.com/ipopop).<br />
 This project is [MIT](https://en.wikipedia.org/wiki/MIT_License) licensed.
 
 ***
