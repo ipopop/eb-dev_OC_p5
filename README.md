@@ -12,8 +12,10 @@
   </a>
 </p>
 
-### ✨ [Slides presentation](https://slides.com/ipopop/soutenance-p5/fullscreen)
+### ✨ [Slides presentation](https://slides.com/ipopop/soutenance-p5/fullscreen#/1/0/2)
 ## A from scratch javascript-only MVP (Minimum Viable Product)
+
+![](Screenshot.jpg)
 
 Just an exercise from a Web Development student at OpenClassrooms.com.
 
